@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - AliMAN TechShop</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        /* Shop Page CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #header ul {
+            list-style: none;
+            padding: 0;
+        }
+        #header ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        #header ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #header ul li a.active {
+            color: #ffbd27;
+        }
+        .pro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        /* Sign In Page Specific CSS */
+        .sign-in-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 50px auto;
+        }
+        .sign-in-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sign-in-container label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+        }
+        .sign-in-container input[type="email"],
+        .sign-in-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .sign-in-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #088178;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .sign-in-container button:hover {
+            background-color: #066d65;
+        }
+        .signup-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+        /* Footer Styles from Shop Page */
+        footer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+        }
+        footer .col{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            width: 200px;
+        }
+        footer .logo{
+            margin-bottom: 30px;
+        }
+        footer h4{
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        footer p{
+            font-size: 13px;
+            margin: 0 0 8px 0;
+        }
+        footer a{
+            font: 13px;
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        footer .follow{
+            margin-top: 20px;
+        }
+        footer .follow i{
+            color: #fff;
+            padding-right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        footer .follow i:hover,
+        footer a:hover{
+            color: #ffbd27;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .col {
+                width: 100%;
+                align-items: center;
+            }
+            .sign-in-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <section id="header">
+        <a href="#"><img src="Images/new Logo.png" class="logo" alt="AliMAN TechShop Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="LogIn.html" class="active">Login</a></li>
+                <li><a href="SignUp.html">Sign Up</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+                <li><a href="#" id="cart-icon"><i class="far fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sign In Form Section -->
+    <div class="sign-in-container">
+        <h2>Sign In</h2>
+        <form id="signInForm">
+            <label for="email">Email or Username:</label>
+            <input type="text" id="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Sign In</button>
+
+            <a href="SignUp.html" class="signup-link">Don't have an account? Sign Up</a>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="Images/new Logo.png" alt="AliMAN TechShop Logo">
+            <h4>Contact Us</h4>
+            <p><strong>Location: </strong> Moi Avenue Next to SimLaw Seeds, Opposite Koja Mosque</p>
+            <p><strong>Phone: </strong>+254 797 090646 / +254 104 626289</p>
+            <p><strong>Opening Hours: </strong>08:30 - 19:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About Us</h4>
+            <a href="#">About Us</a>
+            <a href="#">Terms And Conditions</a>
+            <a href="#">Delivery Information</a>
+        </div>
+        
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View My Cart</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div> 
+
+        <div class="col install">
+            <h4>Install Our App</h4>
+            <p>From Google Play Store</p>
+            <div class="row">
+                <!-- App Store Images can be added here -->
+            </div>
+            <p>Secure Payment methods include: M-PESA and Equity Bank</p>
+        </div>
+
+        <div class="copyright">
+            <p>© Copyright, AliMAN TechShop @2024</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sign In Functionality -->
+    <script>
+        document.getElementById('signInForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const usernameOrEmail = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            // Retrieve users from localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Find user by email or username
+            const user = users.find(user => 
+                (user.email === usernameOrEmail || user.username === usernameOrEmail) 
+                && user.password === password
+            );
+
+            if (user) {
+                // If login is successful, show success message and redirect
+                if (confirm('Login successful!...')) {
+                    window.location.href = 'Payment.html'; // Redirect to your payment page
+                }
+            } else {
+                // If login fails, show error message
+                alert('Invalid username/email or password. Please try again.');
+            }
+        });
+
+        document.getElementById('signupLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Redirect to the registration form
+            window.location.href = 'SignUp.html'; // Replace with your actual registration page
+        });
+
+        // Optional: Cart functionality from Shop page (if needed)
+        document.getElementById('cart-icon').addEventListener('click', () => {
+            // Implement cart toggle functionality if cart is present
+            alert('Cart functionality is not implemented on the Sign In page.');
+        });
+    </script>
+
+</body>
+</html>

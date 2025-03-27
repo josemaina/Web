@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AliMAN TechShop</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        /* Shop Page CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #header ul {
+            list-style: none;
+            padding: 0;
+        }
+        #header ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        #header ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #header ul li a.active {
+            color: #ffbd27;
+        }
+        .pro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        /* Sign Up Page Specific CSS */
+        .signup-box {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 50px auto;
+        }
+        .signup-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signup-box label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+        }
+        .signup-box input[type="text"],
+        .signup-box input[type="email"],
+        .signup-box input[type="tel"],
+        .signup-box input[type="date"],
+        .signup-box input[type="password"],
+        .signup-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .signup-box textarea {
+            resize: vertical;
+            height: 80px;
+        }
+        .signup-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #088178;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .signup-box button:hover {
+            background-color: #066d65;
+        }
+        .signup-box a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-box a:hover {
+            text-decoration: underline;
+        }
+        .signup-box .terms {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        /* Footer Styles from Shop Page */
+        footer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+        }
+        footer .col{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            width: 200px;
+        }
+        footer .logo{
+            margin-bottom: 30px;
+        }
+        footer h4{
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        footer p{
+            font-size: 13px;
+            margin: 0 0 8px 0;
+        }
+        footer a{
+            font: 13px;
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        footer .follow{
+            margin-top: 20px;
+        }
+        footer .follow i{
+            color: #fff;
+            padding-right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        footer .follow i:hover,
+        footer a:hover{
+            color: #ffbd27;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .col {
+                width: 100%;
+                align-items: center;
+            }
+            .signup-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <section id="header">
+        <a href="#"><img src="Images/new Logo.png" class="logo" alt="AliMAN TechShop Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="LogIn.html">Login</a></li>
+                <li><a href="SignUp.html" class="active">Sign Up</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+                <li><a href="#" id="cart-icon"><i class="far fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sign Up Form Section -->
+    <div class="signup-box">
+        <form id="signUpForm">
+            <h2>AliMAN TechShop Sign Up</h2>
+            
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        
+            <label for="promoCode">Promo Code (if applicable):</label>
+            <input type="text" id="promoCode" name="promoCode">
+        
+            <div class="terms">
+                <label>
+                    <input type="checkbox" id="agreeTerms" required> I agree to the <a href="#">Terms</a> and <a href="#">Conditions.</a> 
+                </label>
+            </div>
+        
+            <button type="submit">Submit</button>
+        </form>
+    </div> 
+
+    <!-- Footer Section -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="Images/new Logo.png" alt="AliMAN TechShop Logo">
+            <h4>Contact Us</h4>
+            <p><strong>Location: </strong> Moi Avenue Next to SimLaw Seeds, Opposite Koja Mosque</p>
+            <p><strong>Phone: </strong>+254 797 090646 / +254 104 626289</p>
+            <p><strong>Opening Hours: </strong>08:30 - 19:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About Us</h4>
+            <a href="#">About Us</a>
+            <a href="#">Terms And Conditions</a>
+            <a href="#">Delivery Information</a>
+        </div>
+        
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View My Cart</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div> 
+
+        <div class="col install">
+            <h4>Install Our App</h4>
+            <p>From Google Play Store</p>
+            <div class="row">
+                <!-- App Store Images can be added here -->
+            </div>
+            <p>Secure Payment methods include: M-PESA and Equity Bank</p>
+        </div>
+
+        <div class="copyright">
+            <p>© Copyright, AliMAN TechShop @2024</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sign Up Functionality -->
+    <script>
+        document.getElementById('signUpForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve form values
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const dob = document.getElementById('dob').value;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const promoCode = document.getElementById('promoCode').value.trim();
+            const agreeTerms = document.getElementById('agreeTerms').checked;
+
+            // Basic validation
+            if (!agreeTerms) {
+                alert('You must agree to the Terms and Conditions.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please re-enter your password.');
+                return;
+            }
+
+            // Check if username or email already exists
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const userExists = users.some(user => user.username === username || user.email === email);
+            if (userExists) {
+                alert('Username or Email already exists. Please choose a different one.');
+                return;
+            }
+
+            // Create new user object
+            const newUser = {
+                fullName,
+                email,
+                phone,
+                address,
+                dob,
+                username,
+                password, // Note: In a real application, passwords should be hashed
+                promoCode
+            };
+
+            // Store user data in localStorage
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Show success message and redirect
+            if (confirm('Registration successful!...')) {
+                window.location.href = 'Payment.html'; // Redirect to your payment page
+            }
+        });
+
+        // Optional: Cart functionality from Shop page (if needed)
+        document.getElementById('cart-icon').addEventListener('click', () => {
+            // Implement cart toggle functionality if cart is present
+            alert('Cart functionality is not implemented on the Sign Up page.');
+        });
+    </script>
+
+</body>
+</html>

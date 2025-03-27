@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - AliMAN TechShop</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #header ul {
+            list-style: none;
+            padding: 0;
+        }
+        #header ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        #header ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .pro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .pro {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .pro img {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .pro .des {
+            margin-bottom: 10px;
+        }
+        .pro .cart {
+            cursor: pointer;
+            color: #333;
+        }
+        #cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 300px;
+            display: none;
+            z-index: 1000;
+        }
+        #cart h2 {
+            margin: 0 0 10px;
+        }
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        #cart ul li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        #cart ul li button {
+            background: #f00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #cart .total {
+            font-weight: bold;
+        }
+        #cart .pay {
+            background: #0f0;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #newsfeed{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            background-image: url("Images/footer.jpg");
+            background-repeat: no-repeat;
+            background-position: 20% 30%;
+            background-color: #041e42;
+        }
+        
+        #newsfeed h4{
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        #newsfeed p{
+            font-size: 14px;
+            font-weight: 600;
+            color: #818ea0;
+        }
+        
+        #newsfeed p span{
+            color: #ffbd27;
+        }
+        
+        #newsfeed .form{
+            display: flex;
+            width: 40%;
+        }
+        
+        #newsfeed input{
+            height: 3.125rem;
+            padding: 0 1.25em;
+            font-size: 14px;
+            width: 100%;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        #newsfeed button{
+            background-color: #088178;
+            color: #fff;
+            white-space: nowrap;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding: 0 1em;
+            border: none;
+            cursor: pointer;
+        }
+        
+        footer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        footer .col{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        footer .logo{
+            margin-bottom: 30px;
+        }
+        
+        footer h4{
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        
+        footer p{
+            font-size: 13px;
+            margin: 0 0 8px 0;
+        }
+        
+        footer a{
+            font: 13px;
+            text-decoration: none;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        footer .follow{
+            margin-top: 20px;
+        }
+        
+        footer .follow i{
+            color: #465b52;
+            padding-right: 4px;
+            cursor: pointer;
+        }
+        
+        footer .install .row img{
+            border: 1px solid #088178;
+            border-radius: 6px;
+        }
+        
+        footer .install img{
+            margin: 10px 0 15px 0;
+        }
+        
+        footer .follow i:hover,
+        footer a:hover{
+            color: #088178;
+        }        
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="Images/new Logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="Shop.html">Shop</a></li>
+                <li><a href="LogIn.html">Login</a></li>
+                <li><a href="SignUp.html">Sign Up</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+                <li><a href="#" id="cart-icon"><i class="far fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="pro-container">
+        <div class="pro">
+            <img src="Images/iPhone-16-Pro.jpg" alt="iPhone 16 Pro">
+            <div class="des">
+                <span>iPhone</span>
+                <h5>iPhone 16 Pro</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>Ksh.160,000</h4>
+            </div>
+            <i class="fal fa-shopping-cart cart" data-name="iPhone 16 Pro" data-price="160000"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/lenovo-thinkpad-l590-hero-1126.png" alt="">
+                <div class="des">
+                  <span>Lenovo</span>
+                  <h5>Lenovo Thinkpad</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.25,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Lenovo Thinkpad" data-price="25000"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Galaxy A73.jpeg" alt="">
+                <div class="des">
+                  <span>Samsung</span>
+                  <h5>Samsung GalaxyA73</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.55,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Samsung Galaxy A73" data-price="55000"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/hp probook g800.jpeg" alt="">
+                <div class="des">
+                  <span>hp</span>
+                  <h5>hp ProBook g800</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.45,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="hp probook g800" data-price="45000"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Redmi 11Pro.jpeg" alt="">
+                <div class="des">
+                  <span>Redmi Xiaomi</span>
+                  <h5>Redmi Note 11Pro</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.14,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Redmi Note 11Pro" data-price="14000"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Samsung S24 Ultra.webp" alt="">
+                <div class="des">
+                  <span>Samsung</span>
+                  <h5>Samsung Galaxy S24 Ultra</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.174,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Samsung Galaxy S24 Ultra" data-price="174000"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Hisense 243i.png" alt="">
+                <div class="des">
+                  <span>Hisense</span>
+                  <h5>Hisense 243i</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.21,500</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Hisense 243i" data-price="21500"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Tecno Camon 40.png" alt="">
+                <div class="des">
+                  <span>Tecno</span>
+                  <h5>Tecno Camon 40</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.28,500</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Tecno Camon 40" data-price="28500"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Lenovo Yoga A.png" alt="">
+                <div class="des">
+                  <span>Lenovo</span>
+                  <h5>Lenovo Yoga</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.32,500</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Lenovo Yoga" data-price="32500"></i>
+        </div>
+        <div class="pro">
+            <img src="Images/Full Elitedesk.png" alt="">
+                <div class="des">
+                  <span>hp</span>
+                  <h5>hp Elitedesk</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.25,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="hp Elitedesk" data-price="25000"></i>
+        </div>
+        <!-- Add more products similarly -->
+    </section>
+
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <div class="total">Total: Ksh. <span id="total-price">0</span></div>
+        <button class="pay"><a href="Payment.html">Pay</a></button>
+    </div>
+
+    <section id="newsfeed" class="section-p1 section-m1">
+        <div class="newstext">
+           <h4>Sign Up For Exclusive Updates</h4>
+           <p>Get E-mail updates about our latest arrivals and <span>special offers</span></p>
+        </div>
+        <div class="form">
+             <input type="text" placeholder="Please Enter Your email address">
+             <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="Images/new Logo.png" alt="">
+            <h4>Contact Us</h4>
+            <p><strong>Location: </strong> Moi Avenue Next to SimLaw Seeds, Opposite Koja Mosque</p>
+            <p><strong>Phone: </strong>+254 797 090646 / +254 104 626289</p>
+            <p><strong>Opening Hours: </strong>08:30 - 19:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-pinterest-p"></i>
+                  <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+          </div>
+      <div class="col">
+        <h4>About Us</h4>
+        <a href="#">About Us</a>
+        <a href="#">Terms And Conditions</a>
+        <a href="#">Delivery Information</a>
+      </div>
+      
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View My Cart</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div> 
+
+      <div class="col install">
+        <h4>Install Our App</h4>
+        <p>From Google Play Store</p>
+        <div class="row">
+            <!-- App store badges can be added here -->
+        </div>
+        <p>Secure Payment methods include: M-PESA and Equity Bank</p>
+      </div>
+
+      <div class="copyright">
+        <p>© Copyright, AliMAN TechShop @2024 </p>
+      </div>
+    </footer>
+
+    <script>
+        // Initialize cart array and total
+        let cart = [];
+        let total = 0;
+
+        // Function to load cart from localStorage
+        function loadCart() {
+            const storedCart = localStorage.getItem('cart');
+            const storedTotal = localStorage.getItem('total');
+
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                cart.forEach(item => {
+                    addItemToDOM(item.name, item.price);
+                });
+            }
+
+            if (storedTotal) {
+                total = parseInt(storedTotal);
+                document.getElementById('total-price').textContent = total;
+            }
+        }
+
+        // Function to save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('total', total);
+        }
+
+        // Function to add item to the DOM
+        function addItemToDOM(name, price) {
+            const cartItems = document.getElementById('cart-items');
+            const item = document.createElement('li');
+            item.innerHTML = `${name} - Ksh. ${price} <button onclick="removeFromCart(this, '${name}', ${price})">Remove</button>`;
+            cartItems.appendChild(item);
+        }
+
+        // Function to add item to cart
+        function addToCart(name, price) {
+            // Add to cart array
+            cart.push({ name, price });
+            // Update total
+            total += price;
+            // Update DOM
+            addItemToDOM(name, price);
+            document.getElementById('total-price').textContent = total;
+            // Save to localStorage
+            saveCart();
+        }
+
+        // Function to remove item from cart
+        function removeFromCart(button, name, price) {
+            // Remove from cart array
+            cart = cart.filter(item => !(item.name === name && item.price === price));
+            // Update total
+            total -= price;
+            // Update DOM
+            const item = button.parentElement;
+            item.remove();
+            document.getElementById('total-price').textContent = total;
+            // Save to localStorage
+            saveCart();
+        }
+
+        // Function to update total
+        function updateTotal(price) {
+            total += price;
+            document.getElementById('total-price').textContent = total;
+            // Save to localStorage
+            saveCart();
+        }
+
+        // Event listeners for cart buttons
+        document.querySelectorAll('.cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                if (confirm('Do You Want To Add This Product To Your Cart?')) {
+                    alert('Product successfully added to cart');
+                    addToCart(name, price);
+                }
+            });
+        });
+
+        // Toggle cart visibility
+        document.getElementById('cart-icon').addEventListener('click', () => {
+            const cartDiv = document.getElementById('cart');
+            cartDiv.style.display = cartDiv.style.display === 'none' || cartDiv.style.display === '' ? 'block' : 'none';
+        });
+
+        // Load cart on page load
+        window.onload = loadCart;
+    </script>
+</body>
+</html>
